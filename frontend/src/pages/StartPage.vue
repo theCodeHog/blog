@@ -1,14 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
     <h3>{{ fullName }}</h3>
     <h3>{{ message }}</h3>
     <br />
@@ -19,14 +10,14 @@
 
 <script>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import Test from "./Test";
+import Test from "../components/Test";
 
 @Component({
   components: {
     Test,
   },
 })
-export default class HelloWorld extends Vue {
+export default class StartPage extends Vue {
   //Data
   name = "HelloWorld";
   message = "Wating on server";
