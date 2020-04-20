@@ -1,11 +1,12 @@
 <template>
-  <div class="hello">
-    <h3>{{ fullName }}</h3>
-    <h3>{{ message }}</h3>
-    <br />
-    <button @click="getSomeData" class="btn">Click me</button>
-    <Test />
+
+  <div class="home white">
+    <form><input type="text" /></form>
+    <select>
+      <option value=""></option>
+    </select>
   </div>
+
 </template>
 
 <script>
@@ -34,7 +35,7 @@ export default class StartPage extends Vue {
 
   //Computed
   get fullName() {
-    return "Niklas " + "Håkansson";
+    return "";
   }
 
   //Methods
@@ -48,9 +49,7 @@ export default class StartPage extends Vue {
 
   created() {}
 
-  mounted() {
-    console.log(this.$M);
-  }
+  mounted() {}
 
   beforeDestroyed() {}
 }
@@ -58,18 +57,12 @@ export default class StartPage extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.home{
+  padding: 0 2em;
+  min-height: 75vh;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+select{
+  margin: 1em 0;
+  display: block;
 }
 </style>
