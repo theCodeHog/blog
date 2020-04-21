@@ -1,17 +1,27 @@
 <template>
   <div class="article-object">
-    <h6>{{ content.timestamp }}</h6>
-    <h5>{{ content.title }}</h5>
+    <h6>{{ article.timestamp }}</h6>
+    <h5 @click="goToArticle(article.slug)">{{ article.title }}</h5>
+    <ArticleCategory :categories="article.categories" />
   </div>
 </template>
 
 <script>
 import { Vue, Component, Prop } from "vue-property-decorator";
+import ArticleCategory from "./ArticleCategory";
 
-@Component()
+@Component({
+  components: {
+    ArticleCategory,
+  },
+})
 export default class ArticleObject extends Vue {
   @Prop(Object)
-  content;
+  article;
+
+  goToArticle(slug) {
+    this.$router.push(`/article/${slug}`);
+  }
 }
 </script>
 
@@ -24,9 +34,9 @@ export default class ArticleObject extends Vue {
   }
   h5 {
     font-size: 2em !important;
-    margin: 0;
+    margin: 0 0 0.2em 0;
   }
-  h5:hover{
+  h5:hover {
     cursor: pointer;
     text-decoration: underline;
   }
