@@ -15,7 +15,7 @@ import ArticleObject from "../components/articles/ArticleObject";
 
 @Component({
   components: {
-    ArticleObject
+    ArticleObject,
   },
 })
 export default class HomePage extends Vue {
@@ -35,7 +35,11 @@ export default class HomePage extends Vue {
 
   //Computed
   get articles() {
-    return this.$store.state.articles;
+    if (this.$store.state.sortedArticles) {
+      return this.$store.state.sortedArticles;
+    } else {
+      return this.$store.state.articles;
+    }
   }
 
   //Methods
