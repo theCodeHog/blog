@@ -2,7 +2,13 @@
   <div class="left-panel">
     <h4>Navigation</h4>
     <h5 @click="backToHome">Start</h5>
-    <h5 v-for="(course, i) in courses" :key="i" @click="sortArticlesByCourse">{{ course.name }}</h5>
+    <h5
+      v-for="(course, i) in courses"
+      :key="i"
+      @click="sortArticlesByCourse(course.name)"
+    >
+      {{ course.name }}
+    </h5>
   </div>
 </template>
 
@@ -12,11 +18,21 @@ import { Vue, Component } from "vue-property-decorator";
 @Component()
 export default class AsideNav extends Vue {
   backToHome() {
-    this.$router.push({ name: "HomePage" });
+    this.$route.path === "/"
+      ? this.$store.commit("setSortedArticles", null)
+      : this.$router.push("/");
   }
 
-  sortArticlesByCourse(){
-    
+  sortArticlesByCourse(courseName) {
+    let sortedArticlesByCourse = this.$store.state.articles.filter(
+      (article) => {
+        return article.courses.some((course) => {
+          return course.name === courseName;
+        });
+      }
+    );
+
+    this.$store.commit("setSortedArticles", sortedArticlesByCourse);
   }
 
   get courses() {

@@ -15,7 +15,10 @@ export default new Vuex.Store({
         categories: ["Java", "Beginner"],
         timestamp: new Date(),
         educations: [{ name: "Java Developer" }],
-        courses: [{ name: "Basic Java" }],
+        courses: [
+          { name: "Basic Java" },
+          { name: "Object Oriented Programming" },
+        ],
       },
       {
         id: Math.random(),
@@ -42,11 +45,6 @@ export default new Vuex.Store({
       state.sortedArticles = data;
     },
   },
-  actions: {
-    updateSortedArticles({ commit }) {
-      let data = 
-      commit('setSortedArticles', data)
-    }
-  },
+  actions: {},
   modules: {},
 });
