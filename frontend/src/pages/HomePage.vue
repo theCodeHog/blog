@@ -1,24 +1,23 @@
 <template>
-
-  <div class="home white">
-    <form><input type="text" /></form>
-    <select>
-      <option value=""></option>
-    </select>
+  <div class="home-page">
+    <ArticleObject
+      v-for="object in articles"
+      :key="object.id"
+      :content="object"
+    />
   </div>
-
 </template>
 
 <script>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import Test from "../components/Test";
+import ArticleObject from "../components/articles/ArticleObject";
 
 @Component({
   components: {
-    Test,
+    ArticleObject,
   },
 })
-export default class StartPage extends Vue {
+export default class HomePage extends Vue {
   //Data
   name = "HelloWorld";
   message = "Wating on server";
@@ -34,8 +33,8 @@ export default class StartPage extends Vue {
   }
 
   //Computed
-  get fullName() {
-    return "";
+  get articles() {
+    return this.$store.state.articles;
   }
 
   //Methods
@@ -56,13 +55,4 @@ export default class StartPage extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.home{
-  padding: 0 2em;
-  min-height: 75vh;
-}
-select{
-  margin: 1em 0;
-  display: block;
-}
-</style>
+<style scoped lang="scss"></style>
