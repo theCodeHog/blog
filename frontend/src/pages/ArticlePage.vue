@@ -1,16 +1,19 @@
 <template>
   <div class="article-page">
+    <ArticleHeader />
     <Article :article="article" />
   </div>
 </template>
 
 <script>
 import { Vue, Component } from "vue-property-decorator";
+import ArticleHeader from "../components/articles/ArticleHeader"
 import Article from "../components/articles/Article";
 
 @Component({
   components: {
-    Article,
+    ArticleHeader,
+    Article
   },
 })
 export default class ArticlePage extends Vue {
