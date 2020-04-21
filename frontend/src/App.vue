@@ -42,4 +42,7 @@ button {
   // background-color: #CF9248 !important;
   background-color: #597318 !important;
 }
+input:focus {
+  border: none;
+}
 </style>

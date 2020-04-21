@@ -4,8 +4,7 @@
       v-for="article in articles"
       :key="article.id"
       :article="article"
-    >
-    </ArticleObject>
+    />
   </div>
 </template>
 

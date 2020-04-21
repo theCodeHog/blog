@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomePage from "../pages/HomePage";
 import ArticlePage from "../pages/ArticlePage";
+import CreateArticle from "../pages/CreateArticle";
 
 Vue.use(VueRouter);
 
@@ -9,12 +10,17 @@ const routes = [
   {
     path: "/",
     name: "HomePage",
-    component: HomePage,
+    component: HomePage
   },
   {
     path: "/article/:articleName",
     name: "ArticlePage",
-    component: ArticlePage,
+    component: ArticlePage
+  },
+  {
+    path: "/create-article",
+    name: "CreateArticle",
+    component: CreateArticle
   },
 ];
 

@@ -1,6 +1,7 @@
 <template>
   <div class="left-panel">
     <h4>Navigation</h4>
+    <hr />
     <h5 @click="backToHome">Start</h5>
     <h5
       v-for="(course, i) in courses"
@@ -9,6 +10,8 @@
     >
       {{ course.name }}
     </h5>
+    <hr />
+    <h5 @click="goToCreateArticle">Create Article</h5>
   </div>
 </template>
 
@@ -33,6 +36,10 @@ export default class AsideNav extends Vue {
     );
 
     this.$store.commit("setSortedArticles", sortedArticlesByCourse);
+  }
+
+  goToCreateArticle() {
+    this.$router.push("/create-article");
   }
 
   get courses() {
