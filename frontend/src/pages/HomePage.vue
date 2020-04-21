@@ -4,7 +4,8 @@
       v-for="article in articles"
       :key="article.id"
       :article="article"
-    />
+    >
+    </ArticleObject>
   </div>
 </template>
 
@@ -14,7 +15,7 @@ import ArticleObject from "../components/articles/ArticleObject";
 
 @Component({
   components: {
-    ArticleObject,
+    ArticleObject
   },
 })
 export default class HomePage extends Vue {

@@ -1,6 +1,7 @@
 <template>
   <div class="article">
-    <h1>{{article.title}}</h1>
+    <h4>{{article.title}}</h4>
+    <ArticleCategory :categories="article.categories" />
     <p>
       {{article.content}}
     </p>
@@ -9,12 +10,18 @@
 
 <script>
 import { Vue, Component, Prop} from "vue-property-decorator";
+import ArticleCategory from "./ArticleCategory"
 
-@Component()
+@Component({
+  components: {
+    ArticleCategory
+  }
+})
 export default class Article extends Vue {
 
 @Prop()
 article;
+
 }
 </script>
 
