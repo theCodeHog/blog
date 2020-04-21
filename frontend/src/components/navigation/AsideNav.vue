@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="left-panel">
     <h4>Navigation</h4>
     <h5>Start</h5>
     <h5>Login</h5>
