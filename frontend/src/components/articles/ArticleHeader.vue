@@ -20,5 +20,7 @@ backToHome() {
 </script>
 
 <style scoped lang="scss">
-
+  button {
+    margin-top: 1em;
+  }
 </style>

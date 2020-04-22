@@ -1,8 +1,10 @@
 <template>
-  <div class="header row">
+  <div class="header">
     <p class="center white-text bold flow-text">Javautvecklare '19</p>
-    <SearchField />
-    <CategoryField />
+      <div class="col s12 m8 offset-m2">
+        <SearchField />
+        <!-- <CategoryField /> -->
+      </div>
   </div>
 </template>
 
@@ -25,12 +27,12 @@ export default class HeaderImage extends Vue {}
   background-image: url("../../assets/images/DummySchool.jpg");
   background-size: cover;
   background-position: center;
+  margin: 0;
 
   p {
-    margin: 0;
-    padding: 1em;
     font-weight: bold;
     font-size: 2.5em;
+    margin: 0;
   }
 }
 </style>

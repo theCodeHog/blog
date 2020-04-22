@@ -49,14 +49,13 @@ export default class HomePage extends Vue {
 
     this.message = res.message;
   }
-
-  created() {}
-
-  mounted() {}
-
-  beforeDestroyed() {}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .home-page {
+    margin: 2em 0;
+    padding: 0 2em !important;
+  }
+</style>

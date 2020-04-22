@@ -27,6 +27,9 @@ export default class AsideNav extends Vue {
   }
 
   sortArticlesByCourse(courseName) {
+    if (this.$route.path !== "/") {
+      this.$router.push("/");
+    }
     let sortedArticlesByCourse = this.$store.state.articles.filter(
       (article) => {
         return article.courses.some((course) => {
@@ -34,9 +37,10 @@ export default class AsideNav extends Vue {
         });
       }
     );
-
     this.$store.commit("setSortedArticles", sortedArticlesByCourse);
   }
+
+
 
   goToCreateArticle() {
     this.$router.push("/create-article");

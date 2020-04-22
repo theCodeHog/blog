@@ -1,6 +1,5 @@
 <template>
   <div class="right-panel">
-    <h4 class="right">Notifcations</h4>
   </div>
 </template>
 

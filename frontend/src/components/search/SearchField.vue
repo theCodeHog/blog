@@ -1,6 +1,6 @@
 <template>
-  <div class="searchField col s12 m3 push-m3">
-    <input type="text" placeholder="Search" class="search-field white" />
+  <div class="input-field col s12 m6 push-m3">
+    <input type="text" placeholder="Search" />
   </div>
 </template>
 
@@ -12,7 +12,16 @@ export default class SearchField extends Vue {}
 </script>
 
 <style scoped lang="scss">
- .search-field {
-   border-radius: 5px !important;
- }
+.input-field {
+  background-color: rgb(253, 249, 228);
+  border-radius: 5px;
+}
+.input-field input:focus + label {
+  color: black !important;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid black !important;
+  box-shadow: 0 1px 0 0 black !important;
+}
 </style>

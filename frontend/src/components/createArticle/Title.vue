@@ -1,5 +1,6 @@
 <template>
-  <div class="article-title">
+  <div class="article-title input-field">
+    <label for="">Title</label>
     <input type="text" />
   </div>
 </template>

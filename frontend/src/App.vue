@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <HeaderImage />
     <div class="row">
-      <AsideNav class="col l3 hide-on-med-and-down" />
-      <router-view class="col s12 l6" />
-      <PlaceHolder class="col l3 hide-on-med-and-down" />
+      <HeaderImage class="col s12"/>
+      <AsideNav class="col l2 hide-on-med-and-down" />
+      <router-view class="col s12 l8" />
+      <PlaceHolder class="col l2 hide-on-med-and-down" />
     </div>
     <Footer />
   </div>
@@ -31,18 +31,21 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: rgb(253, 249, 228);
 }
-select {
-  display: block !important;
-}
 button {
-  // background-color: #fab766 !important;
-  // background-color: #CF9248 !important;
   background-color: #597318 !important;
 }
-input:focus {
-  border: none;
-}
+// .input-field input:focus + label {
+//   color: #597318 !important;
+// }
+// /* label underline focus color */
+// .row .input-field input:focus {
+//   border-bottom: 1px solid #597318 !important;
+//   box-shadow: 0 1px 0 0 #597318 !important;
+// }
 </style>

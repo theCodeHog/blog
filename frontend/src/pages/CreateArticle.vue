@@ -1,8 +1,10 @@
 <template>
   <div class="create-article">
-    <Title />
-    <!-- <SlugTitle />
-    <ContentArea /> -->
+    <form>
+      <Title />
+      <!-- <SlugTitle />
+      <ContentArea /> -->
+    </form>
   </div>
 </template>
 
