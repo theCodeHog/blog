@@ -27,7 +27,9 @@ export default class ArticleObject extends Vue {
 
 <style scoped lang="scss">
 .article-object {
+  border-radius: 5px;
   margin-bottom: 1em;
+  padding: 1em;
 
   h6 {
     margin: 0;
@@ -40,5 +42,8 @@ export default class ArticleObject extends Vue {
     cursor: pointer;
     text-decoration: underline;
   }
+}
+.article-object:hover {
+  background-color: rgba(89, 115, 24, 0.05)
 }
 </style>

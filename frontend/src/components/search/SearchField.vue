@@ -16,12 +16,4 @@ export default class SearchField extends Vue {}
   background-color: rgb(253, 249, 228);
   border-radius: 5px;
 }
-.input-field input:focus + label {
-  color: black !important;
-}
-/* label underline focus color */
-.row .input-field input:focus {
-  border-bottom: 1px solid black !important;
-  box-shadow: 0 1px 0 0 black !important;
-}
 </style>

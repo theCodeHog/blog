@@ -1,5 +1,5 @@
 <template>
-  <div class="input-field col s6 white">
+  <div class="input-field col s12 m6 white">
     <select>
       <option disabled selected>Choose Category</option>
       <option value="" v-for="(category, i) in categories" :key="i">{{

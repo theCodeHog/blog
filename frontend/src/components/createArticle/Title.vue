@@ -1,7 +1,6 @@
 <template>
-  <div class="article-title input-field">
-    <label for="">Title</label>
-    <input type="text" />
+  <div class="article-title input-field col s12 m6">
+    <input type="text" placeholder="Title"/>
   </div>
 </template>
 
