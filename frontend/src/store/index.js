@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import {articleStore} from "./articleStore";
 
 Vue.use(Vuex);
 
@@ -46,6 +47,8 @@ export default new Vuex.Store({
 
     sortedArticles: null,
 
+    article: null,
+
     education: {
       name: "Java Developer",
       courses: [{ name: "Basic Java" }, { name: "Frontend" }],
@@ -57,5 +60,7 @@ export default new Vuex.Store({
     },
   },
   actions: {},
-  modules: {},
+  modules: {
+    articleStore
+  },
 });

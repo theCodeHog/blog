@@ -6,7 +6,7 @@
       <router-view class="col s12 l8" />
       <PlaceHolder class="col l2 hide-on-med-and-down" />
     </div>
-    <button @click="createArticle">Click Me</button>
+    <!-- <button @click="createArticle">Click Me</button> -->
     <Footer />
   </div>
 </template>
@@ -50,6 +50,11 @@ export default class App extends Vue {
     });
     res = await res.json();
     console.log(res);
+  }
+
+  mounted() {
+    console.log(this.$store.state.articleStore.article);
+    
   }
 }
 </script>
