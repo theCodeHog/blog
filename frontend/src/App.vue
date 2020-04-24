@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div class="row">
-      <HeaderImage class="col s12"/>
+      <HeaderImage class="col s12" />
       <AsideNav class="col l2 hide-on-med-and-down" />
       <router-view class="col s12 l8" />
       <PlaceHolder class="col l2 hide-on-med-and-down" />
     </div>
+    <button @click="createArticle">Click Me</button>
     <Footer />
   </div>
 </template>
@@ -17,6 +18,7 @@ import HeaderImage from "./components/header/HeaderImage";
 import AsideNav from "./components/navigation/AsideNav";
 import PlaceHolder from "./components/notifications/PlaceHolder";
 import Footer from "./components/Footer";
+import { uuid } from "./components/utilities/utils";
 
 @Component({
   components: {
@@ -27,7 +29,29 @@ import Footer from "./components/Footer";
     Footer,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  article = {
+    id: uuid(),
+    title: "Java Basics",
+    slug: "java-basics",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe sapiente provident distinctio perspiciatis atque ea cumque tenetur consequuntur beatae quam, et corporis delectus excepturi doloremque. Ad, repudiandae. Enim tempora asperiores aut. Illo, dolorem pariatur? Minima quam excepturi impedit aut iste sint odio accusamus. Quos voluptates voluptatem maiores temporibus facere.",
+    // categories: ["Java", "Beginner"],
+    timestamp: Date.now() + ""
+    // educations: [{ name: "Java Developer" }],
+    // courses: [{ name: "Basic Java" }, { name: "Object Oriented Programming" }],
+  };
+
+  async createArticle() {
+    let res = await fetch("/rest/articles", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(this.article),
+    });
+    res = await res.json();
+    console.log(res);
+  }
+}
 </script>
 
 <style lang="scss">
