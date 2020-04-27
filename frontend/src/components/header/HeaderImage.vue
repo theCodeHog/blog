@@ -1,11 +1,13 @@
 <template>
-  <div class="header">
-    <p class="center white-text bold flow-text">Javautvecklare '19</p>
-      <div class="col s12 m8 offset-m2">
-        <SearchField />
-        <!-- <CategoryField /> -->
-      </div>
-  </div>
+  <v-row class="header pb-0">
+    <v-col cols="12">
+      <p class="center white-text bold flow-text">Javautvecklare '19</p>
+    </v-col>
+    <v-col cols="4" offset="4">
+      <SearchField />
+      <!-- <CategoryField /> -->
+    </v-col>
+  </v-row>
 </template>
 
 <script>

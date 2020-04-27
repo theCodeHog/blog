@@ -1,18 +1,37 @@
 <template>
-  <div class="left-panel">
-    <h4>Navigation</h4>
-    <hr />
-    <h5 @click="backToHome">Start</h5>
-    <h5
-      v-for="(course, i) in courses"
-      :key="i"
-      @click="sortArticlesByCourse(course.name)"
-    >
-      {{ course.name }}
-    </h5>
-    <hr />
-    <h5 @click="goToCreateArticle">Create Article</h5>
-  </div>
+  <v-card flat tile min-height="100vh">
+    <v-navigation-drawer absolute permanent>
+      <v-list dense nav class="pa-0">
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>Navigation</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item link to="/" @click="backToHome">
+          <v-list-item-content>
+            <v-list-item-title>Start</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          link
+          v-for="course in courses"
+          :key="course.name"
+          :to="`/articles/${course.name}`"
+        >
+          <v-list-item-content>
+            <v-list-item-title>{{ course.name }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item link to="/create-article">
+          <v-list-item-content>
+            <v-list-item-title>Create Article</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-card>
 </template>
 
 <script>
@@ -20,30 +39,12 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component()
 export default class AsideNav extends Vue {
+  path = null;
+
   backToHome() {
     this.$route.path === "/"
       ? this.$store.commit("setSortedArticles", null)
       : this.$router.push("/");
-  }
-
-  sortArticlesByCourse(courseName) {
-    if (this.$route.path !== "/") {
-      this.$router.push("/");
-    }
-    let sortedArticlesByCourse = this.$store.state.articles.filter(
-      (article) => {
-        return article.courses.some((course) => {
-          return course.name === courseName;
-        });
-      }
-    );
-    this.$store.commit("setSortedArticles", sortedArticlesByCourse);
-  }
-
-
-
-  goToCreateArticle() {
-    this.$router.push("/create-article");
   }
 
   get courses() {

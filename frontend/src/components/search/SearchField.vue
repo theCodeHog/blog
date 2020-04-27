@@ -1,7 +1,13 @@
 <template>
-  <div class="input-field col s12 m6 push-m3">
-    <input type="text" placeholder="Search" />
-  </div>
+  <v-text-field
+    dense
+    hide-details
+    solo
+    append-icon="mdi-magnify"
+    class="mb-1"
+    color="black"
+    label="Search"
+  ></v-text-field>
 </template>
 
 <script>

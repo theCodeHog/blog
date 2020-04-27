@@ -1,14 +1,22 @@
 <template>
-  <div id="app">
-    <div class="row">
-      <HeaderImage class="col s12" />
-      <AsideNav class="col l2 hide-on-med-and-down" />
-      <router-view class="col s12 l8" />
-      <PlaceHolder class="col l2 hide-on-med-and-down" />
-    </div>
+  <v-app>
+    <HeaderImage class="col s12" />
+    <v-content>
+      <v-row>
+        <v-col cols="2" class="pl-0">
+          <AsideNav />
+        </v-col>
+        <v-col cols="8">
+          <router-view />
+        </v-col>
+        <v-col cols="2">
+          <PlaceHolder />
+        </v-col>
+      </v-row>
+    </v-content>
     <!-- <button @click="createArticle">Click Me</button> -->
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -37,7 +45,7 @@ export default class App extends Vue {
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe sapiente provident distinctio perspiciatis atque ea cumque tenetur consequuntur beatae quam, et corporis delectus excepturi doloremque. Ad, repudiandae. Enim tempora asperiores aut. Illo, dolorem pariatur? Minima quam excepturi impedit aut iste sint odio accusamus. Quos voluptates voluptatem maiores temporibus facere.",
     // categories: ["Java", "Beginner"],
-    timestamp: Date.now() + ""
+    timestamp: Date.now() + "",
     // educations: [{ name: "Java Developer" }],
     // courses: [{ name: "Basic Java" }, { name: "Object Oriented Programming" }],
   };
@@ -52,10 +60,9 @@ export default class App extends Vue {
     console.log(res);
   }
 
-  mounted() {
-    console.log(this.$store.state.articleStore.article);
-    
-  }
+  // mounted() {
+  //   console.log(this.$store.state.articleStore.article);
+  // }
 }
 </script>
 
