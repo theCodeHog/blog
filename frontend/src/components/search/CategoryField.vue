@@ -15,13 +15,7 @@ import { Vue, Component } from "vue-property-decorator";
 @Component()
 export default class CategoryField extends Vue {
   elem;
-  categories = [
-    "Java",
-    "JavaScirpt",
-    "SQL",
-    "Vue",
-    "React",
-  ];
+  categories = ["Java", "JavaScirpt", "SQL", "Vue", "React"];
 
   mounted() {
     this.elem = document.querySelector("select");

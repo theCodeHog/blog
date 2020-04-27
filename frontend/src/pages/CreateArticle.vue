@@ -5,16 +5,16 @@
       <v-row class="ma-0">
         <Title />
         <SlugTitle />
-      <ContentArea />
+        <ContentArea />
       </v-row>
-      <div class="article-options col s12 valign-wrapper">
-        <v-col class="d-flex" cols="12" sm="6">
-        <CategoryField />
+      <v-row>
+        <v-col cols="12" sm="6">
+          <CategoryField />
         </v-col>
-        <v-col class="d-flex" cols="12" sm="6">
-        <CreateAndPublish />
+        <v-col cols="12" sm="6">
+          <CreateAndPublish />
         </v-col>
-      </div>
+      </v-row>
     </v-form>
   </div>
 </template>
@@ -33,7 +33,7 @@ import CreateAndPublish from "../components/createArticle/CreateAndPublish";
     SlugTitle,
     ContentArea,
     CategoryField,
-    CreateAndPublish
+    CreateAndPublish,
   },
 })
 export default class CreateArticle extends Vue {}

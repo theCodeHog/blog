@@ -1,5 +1,5 @@
 <template>
-  <v-row class="header pb-0">
+  <v-row class="header">
     <v-col cols="12">
       <p class="center white-text bold flow-text">Javautvecklare '19</p>
     </v-col>
