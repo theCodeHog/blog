@@ -53,12 +53,4 @@ export default class AsideNav extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
-h5 {
-  cursor: pointer;
-}
-
-h5:hover {
-  color: #597318;
-}
-</style>
+<style scoped lang="scss"></style>

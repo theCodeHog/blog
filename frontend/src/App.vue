@@ -76,12 +76,4 @@ body {
 button {
   background-color: #597318 !important;
 }
-// .input-field input:focus + label {
-//   color: #597318 !important;
-// }
-// /* label underline focus color */
-// .row .input-field input:focus {
-//   border-bottom: 1px solid #597318 !important;
-//   box-shadow: 0 1px 0 0 #597318 !important;
-// }
 </style>

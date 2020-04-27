@@ -22,11 +22,11 @@ export default class SortedArticlesPage extends Vue {
     let sortedArticlesByCourse = this.$store.state.articles.filter(
       (article) => {
         return article.courses.some((course) => {
-          return course.name === courseName;
+          return course.name === this.$route.params.courseName;
         });
       }
     );
-  console.log(sortetArticlesByCourse);
+    return sortedArticlesByCourse;
   }
 }
 </script>

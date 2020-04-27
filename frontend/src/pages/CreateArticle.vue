@@ -1,15 +1,17 @@
 <template>
   <div class="create-article">
-    <h5>Create a new article</h5>
-    <form>
-      <Title />
-      <SlugTitle />
+    <h1 class="headline grey--text ma-0">Create a new article</h1>
+    <v-form>
+      <v-row>
+        <Title />
+        <SlugTitle />
+      </v-row>
       <ContentArea />
       <div class="article-options col s12 valign-wrapper">
         <CategoryField />
         <CreateAndPublish />
       </div>
-    </form>
+    </v-form>
   </div>
 </template>
 

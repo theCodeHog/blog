@@ -1,7 +1,7 @@
 <template>
-  <div class="article-title input-field col s12 m6">
-    <input type="text" placeholder="Title" v-model="title" />
-  </div>
+  <v-col cols="12" md="7">
+    <v-text-field label="Title" solo color="black"></v-text-field>
+  </v-col>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default class Title extends Vue {
 
   @Watch("title")
   onTitleChange(newVal) {
-    this.$store.commit("articleStore/setArticle", { title: newVal })
+    this.$store.commit("articleStore/setArticle", { title: newVal });
     console.log(this.$store.state.articleStore.article);
   }
 }

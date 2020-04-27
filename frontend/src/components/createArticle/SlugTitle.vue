@@ -1,7 +1,7 @@
 <template>
-  <div class="slug-title input-field col s12 m6">
-    <input type="text" placeholder="this-is-the-url"/>
-  </div>
+  <v-col cols="12" md="5">
+    <v-text-field label="this-is-the-url" solo></v-text-field>
+  </v-col>
 </template>
 
 <script>
