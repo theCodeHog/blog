@@ -1,22 +1,14 @@
 <template>
-    <div class="content-area input-field col s12">
-      <textarea
-        id="textarea1"
-        class="materialize-textarea"
-        placeholder="Write the article here"
-      ></textarea>
-    </div>
+  <v-col cols="12">
+    <v-textarea auto-grow hide-details solo label="Text"></v-textarea>
+  </v-col>
 </template>
 
 <script>
 import { Vue, Component } from "vue-property-decorator";
 
 @Component()
-export default class ContentArea extends Vue {
-  mounted() {
-    this.$M.textareaAutoResize(document.querySelector("#textarea1"));
-  }
-}
+export default class ContentArea extends Vue {}
 </script>
 
 <style scoped lang="scss">
