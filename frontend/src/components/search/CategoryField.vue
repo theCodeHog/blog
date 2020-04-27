@@ -3,6 +3,8 @@
     :items="categories"
     label="Choose Category"
     solo
+    dense
+    hide-details
     >
     </v-select>
 </template>

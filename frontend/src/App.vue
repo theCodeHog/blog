@@ -7,6 +7,10 @@
           <AsideNav />
         </v-col>
         <v-col cols="8">
+          <v-row class="pa-4 mb-0">
+            <SearchField />
+            <CategoryField />
+          </v-row>
           <router-view />
         </v-col>
         <v-col cols="2">
@@ -27,6 +31,8 @@ import AsideNav from "./components/navigation/AsideNav";
 import PlaceHolder from "./components/notifications/PlaceHolder";
 import Footer from "./components/Footer";
 import { uuid } from "./components/utilities/utils";
+import SearchField from "./components/search/SearchField";
+import CategoryField from "./components/search/CategoryField";
 
 @Component({
   components: {
@@ -35,6 +41,8 @@ import { uuid } from "./components/utilities/utils";
     AsideNav,
     PlaceHolder,
     Footer,
+    SearchField,
+    CategoryField,
   },
 })
 export default class App extends Vue {
