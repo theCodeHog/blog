@@ -84,4 +84,9 @@ button {
 //   border-bottom: 1px solid #597318 !important;
 //   box-shadow: 0 1px 0 0 #597318 !important;
 // }
+
+.v-navigation-drawer__border {
+  width: 0 !important;
+}
+
 </style>
