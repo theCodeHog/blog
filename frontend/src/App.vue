@@ -76,4 +76,7 @@ body {
 button {
   background-color: #597318 !important;
 }
+.v-navigation-drawer__border {
+  width: 0 !important;
+}
 </style>

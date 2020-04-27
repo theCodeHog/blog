@@ -12,15 +12,14 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component()
 export default class ArticleHeader extends Vue {
-
-backToHome() {
-  this.$router.push({name: "HomePage"})
-}
+  backToHome() {
+    this.$router.push({ name: "HomePage" });
+  }
 }
 </script>
 
 <style scoped lang="scss">
-  button {
-    margin-top: 1em;
-  }
+button {
+  margin-top: 1em;
+}
 </style>
