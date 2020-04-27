@@ -2,11 +2,11 @@
   <div class="create-article">
     <h1 class="headline grey--text ma-0">Create a new article</h1>
     <v-form>
-      <v-row>
+      <v-row class="ma-0">
         <Title />
         <SlugTitle />
-      </v-row>
       <ContentArea />
+      </v-row>
       <div class="article-options col s12 valign-wrapper">
         <CategoryField />
         <CreateAndPublish />

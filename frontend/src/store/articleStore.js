@@ -1,7 +1,7 @@
 export const articleStore = {
   namespaced: true,
   state: {
-    article: null
+    article: {}
   },
   mutations: {
     setArticle(state, payload) {

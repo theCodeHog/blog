@@ -1,6 +1,13 @@
 <template>
   <v-col cols="12" md="7">
-    <v-text-field label="Title" solo color="black"></v-text-field>
+    <v-text-field
+      dense
+      hide-details
+      solo
+      color="black"
+      label="Title"
+      v-model="title"
+    ></v-text-field>
   </v-col>
 </template>
 
@@ -14,7 +21,6 @@ export default class Title extends Vue {
   @Watch("title")
   onTitleChange(newVal) {
     this.$store.commit("articleStore/setArticle", { title: newVal });
-    console.log(this.$store.state.articleStore.article);
   }
 }
 </script>
