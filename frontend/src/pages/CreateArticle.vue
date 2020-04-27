@@ -8,8 +8,12 @@
       </v-row>
       <ContentArea />
       <div class="article-options col s12 valign-wrapper">
+        <v-col class="d-flex" cols="12" sm="6">
         <CategoryField />
+        </v-col>
+        <v-col class="d-flex" cols="12" sm="6">
         <CreateAndPublish />
+        </v-col>
       </div>
     </v-form>
   </div>

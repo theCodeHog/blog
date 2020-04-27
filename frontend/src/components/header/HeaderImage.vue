@@ -3,9 +3,9 @@
     <v-col cols="12">
       <p class="center white-text bold flow-text">Javautvecklare '19</p>
     </v-col>
-    <v-col cols="4" offset="4">
+    <v-col cols="8" offset="4">
       <SearchField />
-      <!-- <CategoryField /> -->
+      <CategoryField />
     </v-col>
   </v-row>
 </template>

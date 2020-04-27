@@ -1,12 +1,10 @@
 <template>
-  <div class="input-field col s12 m6 white">
-    <select>
-      <option disabled selected>Choose Category</option>
-      <option value="" v-for="(category, i) in categories" :key="i">{{
-        category.name
-      }}</option>
-    </select>
-  </div>
+    <v-select
+    :items="categories"
+    label="Choose Category"
+    solo
+    >
+    </v-select>
 </template>
 
 <script>
@@ -16,11 +14,11 @@ import { Vue, Component } from "vue-property-decorator";
 export default class CategoryField extends Vue {
   elem;
   categories = [
-    { name: "Java" },
-    { name: "JavaScirpt" },
-    { name: "SQL" },
-    { name: "Vue" },
-    { name: "React" },
+    "Java",
+    "JavaScirpt",
+    "SQL",
+    "Vue",
+    "React",
   ];
 
   mounted() {
