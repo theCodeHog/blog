@@ -1,11 +1,7 @@
 <template>
-  <v-row class="header pb-0">
+  <v-row class="header">
     <v-col cols="12">
       <p class="center white-text bold flow-text">Javautvecklare '19</p>
-    </v-col>
-    <v-col cols="8" offset="4">
-      <SearchField />
-      <CategoryField />
     </v-col>
   </v-row>
 </template>

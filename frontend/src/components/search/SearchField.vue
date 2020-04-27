@@ -1,13 +1,15 @@
 <template>
-  <v-text-field
-    dense
-    hide-details
-    solo
-    append-icon="mdi-magnify"
-    class="mb-1"
-    color="black"
-    label="Search"
-  ></v-text-field>
+  <v-col cols="12" md="6" class="py-0">
+    <v-text-field
+      dense
+      hide-details
+      solo
+      append-icon="mdi-magnify"
+      class="mb-1"
+      color="black"
+      label="Search"
+    ></v-text-field>
+  </v-col>
 </template>
 
 <script>

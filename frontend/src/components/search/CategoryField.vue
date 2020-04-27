@@ -1,10 +1,14 @@
 <template>
+  <v-col cols="12">
     <v-select
-    :items="categories"
-    label="Choose Category"
-    solo
+      dense
+      hide-details
+      solo
+      label="Choose Category"
+      :items="categories"
     >
     </v-select>
+  </v-col>
 </template>
 
 <script>
@@ -13,13 +17,7 @@ import { Vue, Component } from "vue-property-decorator";
 @Component()
 export default class CategoryField extends Vue {
   elem;
-  categories = [
-    "Java",
-    "JavaScirpt",
-    "SQL",
-    "Vue",
-    "React",
-  ];
+  categories = ["Java", "JavaScirpt", "SQL", "Vue", "React"];
 
   mounted() {
     this.elem = document.querySelector("select");
