@@ -1,5 +1,4 @@
 <template>
-  <v-col cols="12" md="6" class="py-0">
     <v-text-field
       dense
       hide-details
@@ -9,7 +8,6 @@
       color="black"
       label="Search"
     ></v-text-field>
-  </v-col>
 </template>
 
 <script>

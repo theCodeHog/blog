@@ -27,6 +27,8 @@ import AsideNav from "./components/navigation/AsideNav";
 import PlaceHolder from "./components/notifications/PlaceHolder";
 import Footer from "./components/Footer";
 import { uuid } from "./components/utilities/utils";
+import SearchField from "./components/search/SearchField";
+import CategoryField from "./components/search/CategoryField";
 
 @Component({
   components: {
@@ -35,6 +37,8 @@ import { uuid } from "./components/utilities/utils";
     AsideNav,
     PlaceHolder,
     Footer,
+    SearchField,
+    CategoryField,
   },
 })
 export default class App extends Vue {
