@@ -8,15 +8,8 @@
 
 <script>
 import { Vue, Component } from "vue-property-decorator";
-import SearchField from "../search/SearchField";
-import CategoryField from "../search/CategoryField";
 
-@Component({
-  components: {
-    SearchField,
-    CategoryField,
-  },
-})
+@Component()
 export default class HeaderImage extends Vue {}
 </script>
 

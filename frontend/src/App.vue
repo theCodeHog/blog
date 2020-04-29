@@ -4,13 +4,13 @@
     <v-content>
       <v-row>
         <v-col cols="2" class="pl-0">
-          <AsideNav />
+          <AsideNav class="hidden-md-and-down" />
         </v-col>
-        <v-col cols="8">
+        <v-col cols="12" md="8">
           <router-view />
         </v-col>
         <v-col cols="2">
-          <PlaceHolder />
+          <PlaceHolder class="hidden-md-and-down" />
         </v-col>
       </v-row>
     </v-content>

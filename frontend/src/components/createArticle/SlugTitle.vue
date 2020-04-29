@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Watch } from "vue-property-decorator";
 import slugify from "slugify";
 
 @Component()
@@ -26,6 +26,11 @@ export default class SlugTitle extends Vue {
     } else {
       return "";
     }
+  }
+
+  @Watch("slug")
+  onSlugChange(newVal) {
+    this.$store.commit("articleStore/setArticle", { slug: newVal });
   }
 }
 </script>

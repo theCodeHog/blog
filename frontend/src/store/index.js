@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import {articleStore} from "./articleStore";
+import {courseStore} from "./courseStore";
+import {categoryStore} from "./categoryStore";
 
 Vue.use(Vuex);
 
@@ -61,6 +63,8 @@ export default new Vuex.Store({
   },
   actions: {},
   modules: {
-    articleStore
+    articleStore,
+    courseStore,
+    categoryStore
   },
 });
