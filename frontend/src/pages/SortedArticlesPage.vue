@@ -19,7 +19,7 @@ import ArticleObject from "../components/articles/ArticleObject";
 })
 export default class SortedArticlesPage extends Vue {
   get articles() {
-    let sortedArticlesByCourse = this.$store.state.articles.filter(
+    let sortedArticlesByCourse = this.$store.state.articleStore.articles.filter(
       (article) => {
         return article.courses.some((course) => {
           return course.name === this.$route.params.courseName;

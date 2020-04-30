@@ -1,6 +1,6 @@
 <template>
   <div class="article-object">
-    <h6>{{ article.timestamp }}</h6>
+    <h6>{{ articleDate }}</h6>
     <h5 @click="goToArticle(article.slug)">{{ article.title }}</h5>
     <ArticleCategory :categories="article.categories" />
   </div>
@@ -18,6 +18,10 @@ import ArticleCategory from "./ArticleCategory";
 export default class ArticleObject extends Vue {
   @Prop(Object)
   article;
+
+  get articleDate() {
+    return new Date(+this.article.timestamp).toLocaleString().slice(0, -3);
+  }
 
   goToArticle(slug) {
     this.$router.push(`/article/${slug}`);
@@ -44,6 +48,6 @@ export default class ArticleObject extends Vue {
   }
 }
 .article-object:hover {
-  background-color: rgba(89, 115, 24, 0.05)
+  background-color: rgba(89, 115, 24, 0.05);
 }
 </style>

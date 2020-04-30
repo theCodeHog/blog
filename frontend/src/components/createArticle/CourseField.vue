@@ -1,36 +1,48 @@
 <template>
-  <v-select
-    dense
-    hide-details
-    solo
-    label="Choose Course"
-    :items="courses"
-    item-text="name"
-    v-model="chosenCourse"
-  >
-  </v-select>
+  <v-col cols="12" md="6">
+    <v-select
+      dense
+      hide-details
+      multiple
+      solo
+      label="Choose Course"
+      :items="courses"
+      item-text="name"
+      v-model="chosenCourses"
+    >
+    </v-select>
+    <CoursesSelected
+      @removeCourse="removeCourse"
+      :chosenCourses="chosenCourses"
+    />
+  </v-col>
 </template>
 
 <script>
 import { Vue, Component, Watch } from "vue-property-decorator";
+import CoursesSelected from "./CoursesSelected";
 
-@Component()
+@Component({
+  components: {
+    CoursesSelected,
+  },
+})
 export default class CourseField extends Vue {
-  chosenCourse = "";
   chosenCourses = [];
 
   get courses() {
     return this.$store.state.courseStore.courses;
   }
 
-  @Watch("chosenCourse")
-  onChosenCourseChange(newVal) {
-    this.chosenCourses.push(newVal);
-    this.$store.commit("articleStore/setArticle", {courses: this.chosenCourses});
+  @Watch("chosenCourses")
+  onValueChange(value) {
+    this.$store.commit("articleStore/setArticle", {
+      courses: value,
+    });
   }
 
-  created() {
-    this.$store.dispatch("courseStore/getCourses");
+  removeCourse(index) {
+    this.chosenCourses = this.chosenCourses.filter((course, i) => i !== index);
   }
 }
 </script>

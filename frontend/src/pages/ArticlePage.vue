@@ -18,7 +18,7 @@ import Article from "../components/articles/Article";
 })
 export default class ArticlePage extends Vue {
   get article() {
-    return this.$store.state.articles.filter(
+    return this.$store.state.articleStore.articles.filter(
       (article) => article.slug === this.$route.params.articleName
     )[0];
   }

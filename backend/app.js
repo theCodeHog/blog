@@ -17,19 +17,9 @@ app.get("/rest/categories", async (req, res) => {
 });
 
 app.post("/rest/articles", async (req, res) => {
-  let article = JSON.parse(req.body);
-  let articleToCreate = {
-    id: article.id,
-    title: article.title,
-    slug: article.slug,
-    content: article.content,
-    timestamp: article.timestamp
-  }
-  let course = article.courses[0];
-  let category = article.categories[0];
-
-    await cypher(
-      `
+  
+  await cypher(
+    `
     CREATE (a:Article {
       title: $title,
       slug: $slug,
@@ -37,14 +27,17 @@ app.post("/rest/articles", async (req, res) => {
       id: $id,
       timestamp: $timestamp
     })
-    MERGE (c:Course {name: ${course}})
-    MERGE (ca:Category {name: ${category}})
-    MERGE (a)-[:HAS]->(ca)
-    MERGE (a)-[:HAS]->(ca)
+    WITH a
+    UNWIND $courses AS course
+    UNWIND $categories AS category
+    MERGE(c:Course {name: course})
+    MERGE(ca:Category {name: category})
+    MERGE (a)-[:BELONGS_TO]->(c)
+    MERGE (a)-[:SORTS_UNDER
+    ]->(ca)
     `,
-      JSON.stringify(articleToCreate)
-    );
-
+    req.body
+  );
   res.json({ message: "Created the Article" });
 });
 

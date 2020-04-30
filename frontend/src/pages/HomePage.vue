@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Vue, Component, Prop, Watch } from "vue-property-decorator";
+import { Vue, Component } from "vue-property-decorator";
 import ArticleObject from "../components/articles/ArticleObject";
 
 @Component({
@@ -18,27 +18,9 @@ import ArticleObject from "../components/articles/ArticleObject";
   },
 })
 export default class HomePage extends Vue {
-  //Data
-  name = "HelloWorld";
-  message = "Wating on server";
-
-  //Props
-  @Prop()
-  msg;
-
-  //Watchers
-  @Watch("message")
-  onMessageChange(val) {
-    console.log(val);
-  }
-
   //Computed
   get articles() {
-    if (this.$store.state.sortedArticles) {
-      return this.$store.state.sortedArticles;
-    } else {
-      return this.$store.state.articles;
-    }
+      return this.$store.state.articleStore.articles;
   }
 
   //Methods
@@ -54,8 +36,8 @@ export default class HomePage extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .home-page {
-    margin: 2em 0;
-    padding: 0 2em !important;
-  }
+.home-page {
+  margin: 2em 0;
+  padding: 0 2em !important;
+}
 </style>

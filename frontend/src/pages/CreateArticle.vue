@@ -6,13 +6,9 @@
         <Title />
         <SlugTitle />
         <ContentArea />
-        <v-col cols="12" sm="6">
-          <CategoryField />
-        </v-col>
-        <v-col cols="12" sm="6">
-          <CourseField />
-        </v-col>
-        <v-col cols="12" sm="6">
+        <CategoryField />
+        <CourseField />
+        <v-col cols="12">
           <CreateAndPublish />
         </v-col>
       </v-row>
@@ -26,7 +22,7 @@ import Title from "../components/createArticle/Title";
 import SlugTitle from "../components/createArticle/SlugTitle";
 import ContentArea from "../components/createArticle/ContentArea";
 import CategoryField from "../components/createArticle/CategoryField";
-import CourseField from "../components/createArticle/CourseField"
+import CourseField from "../components/createArticle/CourseField";
 import CreateAndPublish from "../components/createArticle/CreateAndPublish";
 
 @Component({

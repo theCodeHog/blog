@@ -10,11 +10,10 @@
           <router-view />
         </v-col>
         <v-col cols="2">
-          <PlaceHolder class="hidden-md-and-down" />
+          <RightPanel class="hidden-md-and-down" />
         </v-col>
       </v-row>
     </v-content>
-    <!-- <button @click="createArticle">Click Me</button> -->
     <Footer />
   </v-app>
 </template>
@@ -24,36 +23,23 @@ import { Vue, Component } from "vue-property-decorator";
 import Header from "./components/header/Header";
 import HeaderImage from "./components/header/HeaderImage";
 import AsideNav from "./components/navigation/AsideNav";
-import PlaceHolder from "./components/notifications/PlaceHolder";
+import RightPanel from "./components/right-panel/RightPanel";
 import Footer from "./components/Footer";
-import { uuid } from "./components/utilities/utils";
 import SearchField from "./components/search/SearchField";
-import CategoryField from "./components/search/CategoryField";
+import CategoryField from "./components/createArticle/CategoryField";
 
 @Component({
   components: {
     Header,
     HeaderImage,
     AsideNav,
-    PlaceHolder,
+    RightPanel,
     Footer,
     SearchField,
     CategoryField,
   },
 })
 export default class App extends Vue {
-  article = {
-    id: uuid(),
-    title: "Java Basics",
-    slug: "java-basics",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe sapiente provident distinctio perspiciatis atque ea cumque tenetur consequuntur beatae quam, et corporis delectus excepturi doloremque. Ad, repudiandae. Enim tempora asperiores aut. Illo, dolorem pariatur? Minima quam excepturi impedit aut iste sint odio accusamus. Quos voluptates voluptatem maiores temporibus facere.",
-    // categories: ["Java", "Beginner"],
-    timestamp: Date.now() + "",
-    // educations: [{ name: "Java Developer" }],
-    // courses: [{ name: "Basic Java" }, { name: "Object Oriented Programming" }],
-  };
-
   async createArticle() {
     let res = await fetch("/rest/articles", {
       method: "POST",
@@ -64,9 +50,10 @@ export default class App extends Vue {
     console.log(res);
   }
 
-  // mounted() {
-  //   console.log(this.$store.state.articleStore.article);
-  // }
+  created() {
+    this.$store.dispatch("articleStore/getArticles");
+    this.$store.dispatch("courseStore/getCourses");
+  }
 }
 </script>
 

@@ -39,16 +39,14 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component()
 export default class AsideNav extends Vue {
-  path = null;
+  get courses() {
+    return this.$store.state.courseStore.courses;
+  }
 
   backToHome() {
     this.$route.path === "/"
       ? this.$store.commit("setSortedArticles", null)
       : this.$router.push("/");
-  }
-
-  get courses() {
-    return this.$store.state.education.courses;
   }
 }
 </script>

@@ -16,6 +16,8 @@ export default class CreateAndPublish extends Vue {
       timestamp: Date.now() + "",
     });
 
+    // console.log(this.$store.state.articleStore.article);
+
     let res = await fetch("/rest/articles", {
       method: "POST",
       headers: {
@@ -28,7 +30,6 @@ export default class CreateAndPublish extends Vue {
   }
 }
 </script>
-
 <style scoped lang="scss">
 .create-publish {
   padding: 0 !important;
